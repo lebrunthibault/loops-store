@@ -38,21 +38,28 @@ src/
 make dev             # Dev server
 make build           # Build production
 make lint            # ESLint
+make db-start        # Démarrer Supabase local (Docker)
+make db-stop         # Arrêter Supabase local
 make db-reset        # Reset DB avec migrations
+make db-studio       # Ouvrir Supabase Studio local
 make stripe-listen   # Webhook listener Stripe
 make admin EMAIL=x   # Rendre un user admin
 ```
 
-## Variables d'Environnement (.env.local)
-```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-STRIPE_SECRET_KEY=
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=
-STRIPE_WEBHOOK_SECRET=
-NEXT_PUBLIC_APP_URL=http://localhost:3000
-```
+## Environnements
+
+### Développement (local)
+- Supabase local via Docker (`make db-start`)
+- Variables dans `.env.local` (credentials locaux)
+- Studio: http://127.0.0.1:54323
+
+### Production (Vercel)
+- Supabase Cloud (projet: sjqcpuqzyjvtapclrahd)
+- Variables d'environnement configurées sur Vercel
+- URL: https://loops-store.vercel.app
+
+## Variables d'Environnement
+Voir `.env.example` pour le template. En local, utiliser les credentials de `supabase status`.
 
 ## Notes Techniques
 - Les clients Supabase sont lazy-loaded pour éviter les erreurs SSR

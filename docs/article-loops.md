@@ -164,9 +164,8 @@ jobs:
 
 1. **Type-safety** : tRPC + TypeScript = zéro surprise en runtime
 2. **Sécurité en couches** : RLS + validation API + auth middleware
-3. **Debug méthodique** : logs, timeouts, reproduction systématique
-4. **Simplicité** : Stripe Checkout plutôt que Stripe Elements custom
-5. **CI/CD dès le début** : automatiser pour éviter les erreurs humaines
+3  **Simplicité** : Stripe Checkout plutôt que Stripe Elements custom
+4  **CI/CD dès le début** : automatiser pour éviter les erreurs humaines
 
 ---
 

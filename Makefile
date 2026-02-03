@@ -17,8 +17,14 @@ lint:
 stripe-listen:
 	stripe listen --forward-to localhost:3000/api/webhooks/stripe
 
-# Supabase
-.PHONY: db-push db-reset db-status
+# Supabase Local
+.PHONY: db-start db-stop db-push db-reset db-status db-studio
+db-start:
+	supabase start
+
+db-stop:
+	supabase stop
+
 db-push:
 	supabase db push
 
@@ -27,6 +33,10 @@ db-reset:
 
 db-status:
 	supabase migration list
+
+db-studio:
+	@echo "Opening Supabase Studio at http://127.0.0.1:54323"
+	@xdg-open http://127.0.0.1:54323 2>/dev/null || open http://127.0.0.1:54323 2>/dev/null || echo "Open http://127.0.0.1:54323 in your browser"
 
 # Make user admin (usage: make admin EMAIL=user@example.com)
 .PHONY: admin
