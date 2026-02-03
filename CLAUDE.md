@@ -35,11 +35,12 @@ src/
 
 ## Commandes
 ```bash
-npm run dev          # Dev server
-npm run build        # Build production
-supabase start       # Supabase local
-supabase db reset    # Appliquer migrations
-stripe listen --forward-to localhost:3000/api/webhooks/stripe
+make dev             # Dev server
+make build           # Build production
+make lint            # ESLint
+make db-reset        # Reset DB avec migrations
+make stripe-listen   # Webhook listener Stripe
+make admin EMAIL=x   # Rendre un user admin
 ```
 
 ## Variables d'Environnement (.env.local)

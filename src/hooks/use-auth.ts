@@ -8,7 +8,7 @@ import { Profile } from '@/lib/database.types'
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null)
   const [profile, setProfile] = useState<Profile | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(() => typeof window !== 'undefined')
 
   const supabase = useMemo(() => {
     if (typeof window === 'undefined') return null
@@ -20,10 +20,7 @@ export function useAuth() {
   }, [])
 
   useEffect(() => {
-    if (!supabase) {
-      setLoading(false)
-      return
-    }
+    if (!supabase) return
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {

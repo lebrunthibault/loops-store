@@ -22,7 +22,7 @@ export function useAudioPlayer() {
 
   useEffect(() => {
     const audio = new Audio()
-    audio.volume = state.volume
+    audio.volume = 0.8 // Default volume
     audioRef.current = audio
 
     const handleTimeUpdate = () => {

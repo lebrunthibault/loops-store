@@ -5,7 +5,7 @@ import { LoopWithGenre } from '@/lib/database.types'
 import { trpc } from '@/lib/trpc'
 import { useAuth } from '@/hooks/use-auth'
 import { Button } from '@/components/ui/button'
-import { ShoppingCart, Download, Loader2, Check } from 'lucide-react'
+import { ShoppingCart, Download, Loader2 } from 'lucide-react'
 
 interface PurchaseButtonProps {
   loop: LoopWithGenre

@@ -3,7 +3,7 @@
 import { trpc } from '@/lib/trpc'
 import { formatPrice } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Music, ShoppingCart, Tags, DollarSign } from 'lucide-react'
+import { Music, ShoppingCart, Tags } from 'lucide-react'
 
 export default function AdminDashboard() {
   const { data: stats, isLoading } = trpc.admin.getStats.useQuery()
